@@ -17,7 +17,7 @@ void setup() {
 }
 
 void loop() {
-  DHTResponse response = dht.read(&temperature, &humidity);
+  UniversalDHT::Response response = dht.read(&temperature, &humidity);
   if(response.error) {
     Serial.printf("Read DHTxx failed t=%d err=%d\n", response.time, response.error);
   } else {
@@ -25,6 +25,7 @@ void loop() {
   }
   delay(2000);
 }
+```
 
 # Caveats
 
